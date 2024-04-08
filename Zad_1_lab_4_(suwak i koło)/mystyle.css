@@ -1,0 +1,9 @@
+body{
+    background-color: blanchedalmond;
+}
+.circle {
+    width:200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #50edbb;
+  }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    background-color: #50edbb;
+  }
+#radiusInfo{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%S);
+}
+    </style>
+</head>
+<body>
+    <div id="circle" ></div>
+    <label for="volume">Wielkość koła</label>
+    <input id = "slider" type="range" name="volume" min="30" max="1000" value="50" step="10" />
+<script>
+    var slider = document.getElementById("slider")
+    var circle = document.getElementById("circle")
+    slider.addEventListener("input", myFunction);
+    function myFunction() 
+    {
+        var radius = slider.value;
+        circle.style.width = (radius/2) + "px";
+        circle.style.height = (radius/2) + "px";
+        circle.innerHTML = "<span id = 'radiusInfo'> Promień: " + radius
+        }
+        slider.dispatchEvent(new Event ('input'))
+</script>
+</body>
+</html>
